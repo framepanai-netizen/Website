@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Shop - บริการ GTA San Online ครบวงจร</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>body { font-family: 'Prompt', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- หน้าจอโหลด (Loading Spinner) -->
+    <div id="page-loader" class="fixed inset-0 bg-white/90 backdrop-blur-sm z-50 flex flex-col items-center justify-center transition-opacity duration-300">
+        <div class="w-14 h-14 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin mb-3"></div>
+        <div class="text-blue-600 font-bold text-sm tracking-wide">กำลังโหลด Frame Shop...</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm border-b border-blue-100 sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="bg-blue-600 text-white p-2 rounded-xl shadow-sm"><i class="fa-solid fa-gamepad"></i></div>
+                <span class="font-bold text-xl text-blue-600">FRAME <span class="text-slate-700">SHOP</span></span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-blue-600 font-bold">หน้าแรก</a>
+                <a href="products.html" class="text-slate-600 hover:text-blue-600 transition">สินค้า & บริการ</a>
+                <a href="topup.html" class="text-slate-600 hover:text-blue-600 transition">เติมเงิน</a>
+            </div>
+            <div id="nav-auth" class="flex items-center space-x-2"></div>
+        </div>
+        <!-- เมนูมือถือ -->
+        <div class="md:hidden flex justify-around bg-blue-50/80 py-2.5 border-t border-blue-100 text-xs font-medium">
+            <a href="index.html" class="text-blue-600 font-bold"><i class="fa-solid fa-house mr-1"></i>หน้าแรก</a>
+            <a href="products.html" class="text-slate-600"><i class="fa-solid fa-store mr-1"></i>สินค้า</a>
+            <a href="topup.html" class="text-slate-600"><i class="fa-solid fa-coins mr-1"></i>เติมเงิน</a>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 text-white py-16 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-white/20 text-xs font-semibold px-3.5 py-1 rounded-full">เปิดให้บริการอัตโนมัติ 24 ชั่วโมง</span>
+            <h1 class="text-3xl md:text-5xl font-bold mt-4 mb-4 leading-tight">FRAME SHOP - บริการ GTA SAN ONLINE ครบวงจร!</h1>
+            <p class="text-blue-100 text-base md:text-lg mb-8">จำหน่ายสคริปต์ระบบคุณภาพสูง รับเปิดเซิร์ฟเวอร์ SAMP และเช่า VPS ราคาถูก สเปคแรง</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="products.html" class="bg-white text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3 rounded-xl shadow-md transition">เลือกซื้อสินค้าเลย</a>
+                <a href="topup.html" class="bg-blue-800/50 hover:bg-blue-800 border border-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition">เติมเงินเข้าระบบ</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3 บริการหลัก -->
+    <div class="max-w-6xl mx-auto px-4 -mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="products.html" class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center hover:-translate-y-1 transition block">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-2xl"><i class="fa-solid fa-code"></i></div>
+                <h3 class="font-bold text-lg mb-1">จำหน่ายสคริปต์ GTA SA</h3>
+                <p class="text-slate-500 text-sm">สคริปต์ระบบใหม่ ไม่ซ้ำใคร ไม่มีบั๊ก อัปเดตฟรี</p>
+            </a>
+            <a href="products.html" class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center hover:-translate-y-1 transition block">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-2xl"><i class="fa-solid fa-server"></i></div>
+                <h3 class="font-bold text-lg mb-1">รับเปิดเซิร์ฟเวอร์ SAMP</h3>
+                <p class="text-slate-500 text-sm">แนว Roleplay / DM พร้อมตัวเข้าเกมมือถือและ PC</p>
+            </a>
+            <a href="products.html" class="bg-white p-6 rounded-2xl shadow-md border border-slate-100 text-center hover:-translate-y-1 transition block">
+                <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 text-2xl"><i class="fa-solid fa-cloud"></i></div>
+                <h3 class="font-bold text-lg mb-1">เช่า VPS ราคาถูก</h3>
+                <p class="text-slate-500 text-sm">เครื่องแรง กันยิง DDoS เปิดรันเซิร์ฟลื่น 24 ชม.</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- บริการยอดนิยม -->
+    <div class="max-w-6xl mx-auto px-4 py-12 flex-grow w-full">
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-3">บริการยอดนิยม</h2>
+            <a href="products.html" class="text-blue-600 text-sm font-semibold hover:underline">ดูทั้งหมด →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl shadow-sm border p-6 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-full">สคริปต์ขายดี</span>
+                    <h3 class="font-bold text-lg mt-3 mb-1">สคริปต์ระบบกาชาปอง 3D</h3>
+                    <p class="text-slate-500 text-sm mb-4">สุ่มไอเทมพร้อมอนิเมชั่นสวยงาม รองรับมือถือและ PC</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t">
+                    <span class="text-blue-600 font-bold text-xl">300 ฿</span>
+                    <a href="products.html" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">ไปหน้าสั่งซื้อ</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border p-6 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <span class="bg-cyan-100 text-cyan-700 text-xs font-bold px-2.5 py-1 rounded-full">เปิดเซิร์ฟ</span>
+                    <h3 class="font-bold text-lg mt-3 mb-1">แพ็กเกจเปิดเซิร์ฟพร้อมเล่น</h3>
+                    <p class="text-slate-500 text-sm mb-4">ได้ตัวเกมมือถือ+PC + ระบบพื้นฐาน + ฟรี VPS 1 เดือน</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t">
+                    <span class="text-blue-600 font-bold text-xl">1,500 ฿</span>
+                    <a href="products.html" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">ไปหน้าสั่งซื้อ</a>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border p-6 flex flex-col justify-between hover:shadow-md transition">
+                <div>
+                    <span class="bg-indigo-100 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-full">VPS ราคาถูก</span>
+                    <h3 class="font-bold text-lg mt-3 mb-1">VPS Starter 4GB RAM</h3>
+                    <p class="text-slate-500 text-sm mb-4">CPU 2 Core | RAM 4GB | SSD 50GB | กันยิง DDoS</p>
+                </div>
+                <div class="flex justify-between items-center pt-4 border-t">
+                    <span class="text-blue-600 font-bold text-xl">199 ฿</span>
+                    <a href="products.html" class="bg-blue-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-blue-700 transition">ไปหน้าสั่งซื้อ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t py-6 text-center text-sm text-slate-500">
+        © 2026 Frame Shop - บริการสคริปต์และเช่าเซิร์ฟเวอร์ GTA San Online
+    </footer>
+
+    <script>
+        function navigateTo(url) {
+            const loader = document.getElementById('page-loader');
+            loader.style.display = 'flex';
+            setTimeout(() => loader.style.opacity = '1', 10);
+            setTimeout(() => window.location.href = url, 450);
+        }
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('page-loader');
+            loader.style.opacity = '0';
+            setTimeout(() => loader.style.display = 'none', 300);
+        });
+
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link) {
+                const href = link.getAttribute('href');
+                if (href && href.endsWith('.html')) {
+                    e.preventDefault();
+                    navigateTo(href);
+                }
+            }
+        });
+
+        const user = JSON.parse(localStorage.getItem('frameshop_user'));
+        const navAuth = document.getElementById('nav-auth');
+        if (user) {
+            navAuth.innerHTML = `
+                <a href="topup.html" class="bg-blue-50 text-blue-700 px-3 py-1.5 rounded-lg text-xs md:text-sm font-bold border border-blue-200 hover:bg-blue-100 transition">
+                    <i class="fa-solid fa-wallet mr-1"></i>${Number(user.credit).toFixed(2)} ฿
+                </a>
+                <button onclick="localStorage.removeItem('frameshop_user'); navigateTo('index.html');" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1.5 rounded-lg text-xs md:text-sm transition">ออก</button>
+            `;
+        } else {
+            navAuth.innerHTML = `
+                <a href="login.html" class="text-slate-600 hover:text-blue-600 text-sm font-medium px-2">เข้าสู่ระบบ</a>
+                <a href="register.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm transition">สมัครสมาชิก</a>
+            `;
+        }
+    </script>
+</body>
+</html>
